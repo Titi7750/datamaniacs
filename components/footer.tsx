@@ -1,5 +1,5 @@
+import { BarChart2, Github, Linkedin, Twitter } from "lucide-react"
 import Link from "next/link"
-import { BarChart2, Twitter, Linkedin, Github } from "lucide-react"
 
 interface FooterProps {
   content: {
@@ -42,7 +42,7 @@ export function Footer({ content }: FooterProps) {
           <div className="space-y-4">
             <Link href="#hero" className="flex items-center space-x-2 text-xl font-bold">
               <BarChart2 className="h-6 w-6 text-primary" />
-              <span>DataAgency</span>
+              <span>Data'Maniacs</span>
             </Link>
             <p className="text-sm text-muted-foreground">{content.description}</p>
             <div className="flex space-x-4">
@@ -103,7 +103,7 @@ export function Footer({ content }: FooterProps) {
 
         <div className="border-t mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            &copy; {currentYear} DataAgency. {content.copyright}
+            &copy; {currentYear} Data'Maniacs. {content.copyright}
           </p>
           <p className="text-sm text-muted-foreground mt-4 md:mt-0">{content.tagline}</p>
         </div>

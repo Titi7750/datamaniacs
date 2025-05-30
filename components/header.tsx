@@ -1,15 +1,17 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Menu, X, BarChart2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { Menu, X } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import { useEffect, useState } from "react"
 
 interface HeaderProps {
   activeSection: string
   content: {
     logo: string
+    logoTitle: string
     items: { id: string; label: string }[]
     cta: string
   }
@@ -50,8 +52,16 @@ export function Header({ activeSection, content }: HeaderProps) {
             className="flex items-center space-x-2 text-xl font-bold"
             onClick={() => scrollToSection("hero")}
           >
-            <BarChart2 className="h-6 w-6 text-primary" />
-            <span>{content.logo}</span>
+            <span>
+              <Image
+                src={content.logo}
+                alt="Logo Data'Maniacs"
+                width={80}
+                height={40}
+                priority
+              />
+            </span>
+            <span className="hidden md:inline">{content.logoTitle}</span>
           </Link>
 
           {/* Desktop Navigation */}

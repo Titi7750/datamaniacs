@@ -2,7 +2,7 @@
 export const siteContent = {
   // Méta-données
   meta: {
-    title: "DataAgency - Transformez vos données en insights",
+    title: "Data'Maniacs - Transformez vos données en insights",
     description:
       "Nous aidons les entreprises à exploiter leurs données pour stimuler la croissance, optimiser les opérations et prendre des décisions basées sur les données en toute confiance.",
     // SEO et partage social
@@ -10,23 +10,23 @@ export const siteContent = {
       // Métadonnées de base
       keywords:
         "analyse de données, data science, big data, visualisation de données, intelligence artificielle, machine learning, conseil en données",
-      author: "DataAgency",
-      canonical: "https://dataagency.fr",
+      author: "Data'Maniacs",
+      canonical: "https://datamaniacs.fr/",
       locale: "fr_FR",
       type: "website",
 
       // Open Graph (Facebook, LinkedIn)
       openGraph: {
-        title: "DataAgency | Experts en analyse et visualisation de données",
+        title: "Data'Maniacs | Experts en analyse et visualisation de données",
         description:
           "Transformez vos données en insights actionnables. Expertise en data engineering, analytics, visualisation et machine learning.",
-        siteName: "DataAgency",
+        siteName: "Data'Maniacs",
         images: [
           {
             url: "/og-image.png",
             width: 1200,
             height: 630,
-            alt: "DataAgency - Experts en données",
+            alt: "Data'Maniacs - Experts en données",
           },
         ],
       },
@@ -34,10 +34,10 @@ export const siteContent = {
       // Twitter Card
       twitter: {
         card: "summary_large_image",
-        title: "DataAgency | Experts en analyse de données",
+        title: "Data'Maniacs | Experts en analyse de données",
         description:
           "Transformez vos données brutes en insights stratégiques avec nos experts en data science et visualisation.",
-        creator: "@dataagency",
+        creator: "@datamaniacs",
         images: ["/twitter-image.png"],
       },
 
@@ -46,35 +46,35 @@ export const siteContent = {
         organization: {
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "DataAgency",
-          url: "https://dataagency.fr",
-          logo: "https://dataagency.fr/logo.png",
+          name: "Data'Maniacs",
+          url: "https://datamaniacs.fr",
+          logo: "https://datamaniacs.fr/logo.png",
           sameAs: [
-            "https://twitter.com/dataagency",
-            "https://www.linkedin.com/company/dataagency",
-            "https://github.com/dataagency",
+            "https://twitter.com/datamaniacs",
+            "https://www.linkedin.com/company/datamaniacs",
+            "https://github.com/datamaniacs",
           ],
           contactPoint: {
             "@type": "ContactPoint",
-            telephone: "+33-1-23-45-67-89",
+            telephone: "+33-6-48-49-53-19",
             contactType: "customer service",
-            email: "contact@dataagency.com",
+            email: "contact@datamaniacs.fr",
             availableLanguage: ["French", "English"],
           },
         },
         localBusiness: {
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
-          name: "DataAgency",
-          image: "https://dataagency.fr/og-image.png",
-          "@id": "https://dataagency.fr",
-          url: "https://dataagency.fr",
-          telephone: "+33-1-23-45-67-89",
+          name: "Data'Maniacs",
+          image: "https://datamaniacs.fr/og-image.png",
+          "@id": "https://datamaniacs.fr",
+          url: "https://datamaniacs.fr",
+          telephone: "+33-6-48-49-53-19",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "123 Rue des Données",
+            streetAddress: "40 Rue du chemin vert",
             addressLocality: "Paris",
-            postalCode: "75001",
+            postalCode: "75011",
             addressCountry: "FR",
           },
           geo: {
@@ -86,7 +86,7 @@ export const siteContent = {
             "@type": "OpeningHoursSpecification",
             dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
             opens: "09:00",
-            closes: "18:00",
+            closes: "19:00",
           },
           priceRange: "€€€",
           serviceArea: {
@@ -105,9 +105,9 @@ export const siteContent = {
 
   // Navigation
   navigation: {
-    logo: "DataAgency",
+    logo: "/logo.png",
+    logoTitle: "Data'Maniacs",
     items: [
-      { id: "hero", label: "Accueil" },
       { id: "about", label: "À propos" },
       { id: "services", label: "Services" },
       { id: "projects", label: "Projets" },
@@ -143,8 +143,8 @@ export const siteContent = {
     mission: {
       title: "Notre mission",
       description: [
-        "Chez DataAgency, notre mission est de démocratiser l'analyse de données et de rendre les capacités avancées de données accessibles aux entreprises de toutes tailles. Nous croyons que chaque organisation devrait pouvoir exploiter la puissance de ses données pour stimuler la croissance et l'innovation.",
-        "Fondée en 2018, nous avons aidé plus de 100 entreprises à transformer leur approche des données, ce qui a entraîné des améliorations mesurables en termes d'efficacité, de satisfaction client et de croissance des revenus.",
+        "Chez Data'Maniacs, notre mission est de démocratiser l'analyse de données et de rendre les capacités avancées de données accessibles aux entreprises de toutes tailles. Nous croyons que chaque organisation devrait pouvoir exploiter la puissance de ses données pour stimuler la croissance et l'innovation.",
+        "Fondée en 2025, nous avons aidé plus de 15 entreprises à transformer leur approche des données, ce qui a entraîné des améliorations mesurables en termes d'efficacité, de satisfaction client et de croissance des revenus.",
       ],
     },
     values: [
@@ -172,28 +172,58 @@ export const siteContent = {
       title: "Rencontrez notre équipe",
       members: [
         {
-          name: "Emma Johnson",
-          role: "Fondatrice & CEO",
-          image: "/professional-woman-glasses.png",
-          alt: "Emma Johnson, Fondatrice et CEO de DataAgency",
+          name: "Tristan Fioroni",
+          citation: '"In code we trust, in data we believe"',
+          image: "/tristan.jpg",
+          alt: "Tristan Fioroni, membre de l'équipe Data'Maniacs",
+          contact_mail: "tristan@datamaniacs.fr",
+          contact_teams: "tristan.fioroni@my-digital-school.org"
         },
         {
-          name: "Michael Chen",
-          role: "Data Scientist Principal",
-          image: "/professional-asian-man.png",
-          alt: "Michael Chen, Data Scientist Principal chez DataAgency",
+          name: "Imene Belhocine",
+          citation: '"Too many rows, not enough RAM"',
+          image: "/imene.jpg",
+          alt: "Imene Belhocine, membre de l'équipe Data'Maniacs",
+          contact_mail: "imene@datamaniacs.fr",
+          contact_teams: "imene.belhocine@my-digital-school.org"
         },
         {
-          name: "Sarah Williams",
-          role: "Ingénieure de données",
-          image: "/professional-woman-smiling.png",
-          alt: "Sarah Williams, Ingénieure de données chez DataAgency",
+          name: "Haitam Hanine",
+          citation: '"Clean data for restful minds"',
+          image: "/haitam.jpg",
+          alt: "Haitam Hanine, membre de l'équipe Data'Maniacs",
+          contact_mail: "haitam@datamaniacs.fr",
+          contact_teams: "haitam.hanine@my-digital-school.org"
+        },
+        {
+          name: "Khaoula Chihab",
+          citation: '"Bringing meaning to the meaningless — that\'s data"',
+          image: "/khaoula.jpg",
+          alt: "Khaoula Chihab, membre de l'équipe Data'Maniacs",
+          contact_mail: "khaoula@datamaniacs.fr",
+          contact_teams: "khaoula.chihab@my-digital-school.org"
+        },
+        {
+          name: "Wassim Benkhelifa",
+          citation: '"Big data, big problems, but also big solutions"',
+          image: "/wassim.jpg",
+          alt: "Wassim Benkhelifa, membre de l'équipe Data'Maniacs",
+          contact_mail: "wassim@datamaniacs.fr",
+          contact_teams: "wassim.benkhelifa@my-digital-school.org"
+        },
+        {
+          name: "Alexandre Demay",
+          citation: '"Data never sleeps. Fortunately, I do"',
+          image: "/alexandre.jpg",
+          alt: "Alexandre Demay, membre de l'équipe Data'Maniacs",
+          contact_mail: "alexandre@datamaniacs.fr",
+          contact_teams: "alexandre.demay@my-digital-school.org"
         },
       ],
     },
     teamImage: {
       src: "/data-team-office.png",
-      alt: "L'équipe DataAgency collaborant sur des projets de données dans nos bureaux",
+      alt: "L'équipe Data'Maniacs collaborant sur des projets de données dans nos bureaux",
     },
   },
 
@@ -341,15 +371,15 @@ export const siteContent = {
       title: "Informations de contact",
       email: {
         label: "Email",
-        value: "contact@dataagency.com",
+        value: "contact@datamaniacs.fr",
       },
       phone: {
         label: "Téléphone",
-        value: "+33 1 23 45 67 89",
+        value: "+33 6 48 49 53 19",
       },
       office: {
         label: "Bureau",
-        value: "123 Rue des Données, Paris, 75001",
+        value: "40 Rue du chemin vert, Paris, 75011",
       },
     },
     callout: {

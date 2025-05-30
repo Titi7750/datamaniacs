@@ -1,12 +1,8 @@
-"use client"
-
-import type React from "react"
-
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, CheckCircle2 } from "lucide-react"
+import { CheckCircle2, Mail, MapPin, Phone } from "lucide-react"
+import { useState } from "react"
 
 interface ContactProps {
   content: {
@@ -14,18 +10,9 @@ interface ContactProps {
     subtitle: string
     info: {
       title: string
-      email: {
-        label: string
-        value: string
-      }
-      phone: {
-        label: string
-        value: string
-      }
-      office: {
-        label: string
-        value: string
-      }
+      email: { label: string; value: string }
+      phone: { label: string; value: string }
+      office: { label: string; value: string }
     }
     callout: {
       title: string
@@ -61,7 +48,6 @@ export function Contact({ content }: ContactProps) {
     company: "",
     message: "",
   })
-
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
@@ -70,21 +56,29 @@ export function Contact({ content }: ContactProps) {
     setFormState((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setIsSubmitted(true)
-      setFormState({
-        name: "",
-        email: "",
-        company: "",
-        message: "",
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formState),
       })
-    }, 1500)
+
+      if (response.ok) {
+        setIsSubmitted(true)
+        setFormState({ name: "", email: "", company: "", message: "" })
+      } else {
+        const err = await response.json()
+        alert(err.message || "Erreur lors de l'envoi du message.")
+      }
+    } catch (error) {
+      alert("Une erreur s'est produite. Merci de réessayer.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -97,6 +91,7 @@ export function Contact({ content }: ContactProps) {
 
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
+            {/* Coordonnées */}
             <h3 className="text-2xl font-bold mb-6">{content.info.title}</h3>
             <div className="space-y-6 mb-8">
               <div className="flex items-start gap-4">
@@ -130,6 +125,7 @@ export function Contact({ content }: ContactProps) {
               </div>
             </div>
 
+            {/* Callout */}
             <div className="bg-muted/30 p-6 rounded-lg">
               <h4 className="font-bold mb-2">{content.callout.title}</h4>
               <p className="text-muted-foreground mb-4">{content.callout.description}</p>
@@ -137,6 +133,7 @@ export function Contact({ content }: ContactProps) {
             </div>
           </div>
 
+          {/* Formulaire */}
           <div className="bg-background p-8 rounded-lg shadow-sm">
             {isSubmitted ? (
               <div className="flex flex-col items-center justify-center h-full text-center py-12">

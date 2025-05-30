@@ -1,5 +1,5 @@
+import { CheckCircle2, Mail, MessageSquare } from "lucide-react"
 import Image from "next/image"
-import { CheckCircle2 } from "lucide-react"
 
 interface AboutProps {
   content: {
@@ -17,7 +17,10 @@ interface AboutProps {
       title: string
       members: {
         name: string
-        role: string
+        role?: string
+        citation: string
+        contact_mail?: string
+        contact_teams?: string
         image: string
         alt: string
       }[]
@@ -77,6 +80,32 @@ export function About({ content }: AboutProps) {
               </div>
               <h4 className="text-xl font-bold">{member.name}</h4>
               <p className="text-muted-foreground">{member.role}</p>
+              <p className="mt-4 text-sm text-muted-foreground">{member.citation}</p>
+              {member.contact_mail && (
+                <p className="mt-2 text-sm">
+                  <a
+                    href={`mailto:${member.contact_mail}`}
+                    className="flex items-center text-primary hover:underline"
+                  >
+                    <Mail className="w-5 h-5 mr-2" />
+                    <span>{member.contact_mail}</span>
+                  </a>
+                </p>
+              )}
+
+              {member.contact_teams && (
+                <p className="mt-2 text-sm">
+                  <a
+                    href={`https://teams.microsoft.com/l/chat/0/0?users=${member.contact_teams}`}
+                    className="flex items-center text-primary hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <MessageSquare className="w-5 h-5 mr-2" />
+                    <span>Contactez-nous via Teams</span>
+                  </a>
+                </p>
+              )}
             </div>
           ))}
         </div>
