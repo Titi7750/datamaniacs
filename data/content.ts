@@ -427,8 +427,6 @@ export const siteContent = {
         links: [
           { label: "À propos", href: "#about" },
           { label: "Projets", href: "#projects" },
-          { label: "Blog", href: "#" },
-          { label: "Carrières", href: "#" },
         ],
       },
       legal: {

@@ -1,15 +1,13 @@
-import type { NextApiRequest, NextApiResponse } from "next"
-import nodemailer from "nodemailer"
+// app/api/contact/route.ts
+import { NextRequest, NextResponse } from 'next/server'
+import nodemailer from 'nodemailer'
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ message: "Méthode non autorisée" })
-  }
-
-  const { name, email, company, message } = req.body
+export async function POST(req: NextRequest) {
+  const body = await req.json()
+  const { name, email, company, message } = body
 
   if (!name || !email || !message) {
-    return res.status(400).json({ message: "Champs requis manquants." })
+    return NextResponse.json({ message: 'Champs requis manquants.' }, { status: 400 })
   }
 
   try {
@@ -21,11 +19,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
+      tls: { rejectUnauthorized: false },
     })
 
     await transporter.sendMail({
-      from: `"${name}" <${email}>`,
+      from: `"${name}" <${process.env.SMTP_USER}>`, // expéditeur sécurisé
       to: process.env.CONTACT_TO || "contact@datamaniacs.fr",
+      replyTo: email,
       subject: `Message depuis le site - ${company || "sans entreprise"}`,
       html: `
         <h3>Nouveau message de ${name}</h3>
@@ -35,9 +35,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       `,
     })
 
-    res.status(200).json({ success: true })
-  } catch (error) {
+    return NextResponse.json({ success: true })
+  } catch (error: any) {
     console.error("Erreur envoi email:", error)
-    res.status(500).json({ message: "Erreur serveur. Merci de réessayer plus tard." })
+    return NextResponse.json({ message: error.message || "Erreur serveur" }, { status: 500 })
   }
 }
