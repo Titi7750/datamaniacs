@@ -1,9 +1,9 @@
-import type React from "react"
 import "@/app/globals.css"
+import { siteContent } from "@/data/content"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import { siteContent } from "@/data/content"
 import Script from "next/script"
+import type React from "react"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
   // Métadonnées Open Graph
   openGraph: {
-    type: meta.seo.type,
+    type: meta.seo.type as "website",
     locale: meta.seo.locale,
     url: meta.seo.canonical,
     title: meta.seo.openGraph.title,
