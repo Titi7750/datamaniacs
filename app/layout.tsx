@@ -12,6 +12,8 @@ const { meta } = siteContent
 
 // Création des métadonnées pour Next.js
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.datamaniacs.fr"),
+
   // Métadonnées de base
   title: meta.title,
   description: meta.description,
@@ -55,20 +57,21 @@ export const metadata: Metadata = {
     },
   },
 
-  // Métadonnées pour les applications mobiles
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
-
-  // Métadonnées pour les thèmes
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "#111827" },
-  ],
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
+
+// ✅ Export séparé pour viewport
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+}
+
+// ✅ Export séparé pour themeColor
+export const themeColor = [
+  { media: "(prefers-color-scheme: light)", color: "white" },
+  { media: "(prefers-color-scheme: dark)", color: "#111827" },
+]
 
 export default function RootLayout({
   children,
