@@ -5,7 +5,6 @@ import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
-import { Projects } from "@/components/projects"
 import { Services } from "@/components/services"
 import { ThemeProvider } from "@/components/theme-provider"
 import { siteContent } from "@/data/content"
@@ -60,7 +59,7 @@ export default function Home() {
           <Hero content={siteContent.hero} />
           <About content={siteContent.about} />
           <Services content={siteContent.services} />
-          <Projects content={siteContent.projects} />
+          {/* <Projects content={siteContent.projects} /> */}
           <Contact content={siteContent.contact} />
         </main>
         <Footer content={siteContent.footer} />

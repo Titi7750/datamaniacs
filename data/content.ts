@@ -110,8 +110,8 @@ export const siteContent = {
     items: [
       { id: "about", label: "À propos" },
       { id: "services", label: "Services" },
-      { id: "projects", label: "Projets" },
-      { id: "contact", label: "Contact" },
+      // { id: "projects", label: "Projets" },
+      { id: "contact", label: "Contact" }
     ],
     cta: "Contactez-nous",
   },
@@ -426,7 +426,9 @@ export const siteContent = {
         title: "Entreprise",
         links: [
           { label: "À propos", href: "#about" },
-          { label: "Projets", href: "#projects" },
+          { label: "Services", href: "#services" },
+          // { label: "Projets", href: "#projects" },
+          { label: "Contact", href: "#contact" }
         ],
       },
       legal: {

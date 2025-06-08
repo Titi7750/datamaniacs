@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { CheckCircle2, Mail, MapPin, Phone } from "lucide-react"
 import { useState } from "react"
+import { CalendlyPopupButton } from "./ui/calendlyPopupButton"
 
 interface ContactProps {
   content: {
@@ -129,7 +130,12 @@ export function Contact({ content }: ContactProps) {
             <div className="bg-muted/30 p-6 rounded-lg">
               <h4 className="font-bold mb-2">{content.callout.title}</h4>
               <p className="text-muted-foreground mb-4">{content.callout.description}</p>
-              <Button className="w-full">{content.callout.cta}</Button>
+              <CalendlyPopupButton
+                url="https://calendly.com/tristan-datamaniacs/30min"
+                label={content.callout.cta}
+              />
+
+              {/* <Button className="w-full">{content.callout.cta}</Button> */}
             </div>
           </div>
 

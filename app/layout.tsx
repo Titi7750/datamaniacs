@@ -85,6 +85,13 @@ export default function RootLayout({
         <link rel="icon" href="/logo.png" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
 
+        {/* Calendly */}
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          type="text/javascript"
+          strategy="afterInteractive"
+        />
+
         {/* Schema.org JSON-LD pour le SEO */}
         <Script
           id="schema-organization"
