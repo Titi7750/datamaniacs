@@ -144,7 +144,7 @@ export const siteContent = {
       title: "Notre mission",
       description: [
         "Chez Data'Maniacs, notre mission est de démocratiser l'analyse de données et de rendre les capacités avancées de données accessibles aux entreprises de toutes tailles. Nous croyons que chaque organisation devrait pouvoir exploiter la puissance de ses données pour stimuler la croissance et l'innovation.",
-        "Fondée en 2025, nous avons aidé plus de 15 entreprises à transformer leur approche des données, ce qui a entraîné des améliorations mesurables en termes d'efficacité, de satisfaction client et de croissance des revenus.",
+        "Fondée en 2025, nous aidons plus de 15 entreprises à transformer leur approche des données, ce qui a entraîné des améliorations mesurables en termes d'efficacité, de satisfaction client et de croissance des revenus.",
       ],
     },
     values: [
