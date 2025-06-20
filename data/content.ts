@@ -222,7 +222,7 @@ export const siteContent = {
       ],
     },
     teamImage: {
-      src: "/data-team-office.png",
+      src: "/data_team.jpg",
       alt: "L'équipe Data'Maniacs collaborant sur des projets de données dans nos bureaux",
     },
   },
